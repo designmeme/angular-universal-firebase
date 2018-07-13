@@ -3,6 +3,9 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
@@ -24,6 +27,7 @@ import { isPlatformBrowser } from '@angular/common';
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'tour-of-heroes' }),
+    AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,

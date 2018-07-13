@@ -10,7 +10,7 @@
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
-    "serve:ssr": "node dist/server.js",
+    "serve:ssr": "DISABLE_FIREBASE=true node dist/server.js",
     "build:client-and-server-bundles": "ng build --prod && ng run angular.io-example:server",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
@@ -31,7 +31,11 @@
     "@nguniversal/express-engine": "^6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "angular-in-memory-web-api": "^0.6.0",
+    "angularfire2": "^5.0.0-rc.11",
     "core-js": "^2.5.4",
+    "firebase": "^5.2.0",
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^1.1.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.24"
   },
@@ -43,6 +47,7 @@
     "@types/jasmine": "~2.8.0",
     "@types/jasminewd2": "^2.0.3",
     "@types/node": "^6.0.45",
+    "codelyzer": "^4.4.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
